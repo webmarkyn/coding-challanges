@@ -1,0 +1,15 @@
+var MyHashMap = function() {
+    const values = []
+    return {
+        put: (key, value) => {
+            values[key] = value;
+        },
+        get: (key) => {
+            if (values[key] === undefined) return -1;
+            return values[key];
+        },
+        remove: (key) => {
+            values[key] = undefined;
+        }  
+    }
+};
