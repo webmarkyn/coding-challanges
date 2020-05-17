@@ -1,0 +1,18 @@
+var MyQueue = function() {
+    const values = [];
+    return {
+        push: (val) => {
+            values.unshift(val);
+        },
+        pop: () => {
+            return values.pop();
+        },
+        peek: () => {
+            return values[values.length-1]
+        },
+        empty: () => {
+            return values.length === 0
+        }
+    }
+    
+};
