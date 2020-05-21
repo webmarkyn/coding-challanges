@@ -1,0 +1,15 @@
+var destCity = function(paths) {
+    const hash = {}
+    for (let path of paths) {
+        hash[path[0]] = {
+            occur: hash[path[0]] ? -~hash[path[0]].occur : 1
+        }
+        hash[path[1]] = {
+            occur: hash[path[1]] ? -~hash[path[1]].occur : 1,
+            destination: true
+        }
+    }
+    for (let city in hash) {
+        if (hash[city].occur === 1 && hash[city].destination) return city
+    }
+};
