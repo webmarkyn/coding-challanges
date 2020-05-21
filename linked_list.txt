@@ -1,0 +1,16 @@
+var removeElements = function(head, val) {
+    if (!head) return head
+    let init = new ListNode(null, head)
+    let prev =  init
+    let node = prev.next;
+    while (node) {
+        if (node.val === val) {
+
+            prev.next = node.next
+        } else {
+            prev = prev.next
+        }
+        node = node ? node.next : null;
+    }
+    return init.next
+};
