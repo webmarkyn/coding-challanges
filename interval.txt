@@ -1,0 +1,16 @@
+var intersection = function(nums1, nums2) {
+    const result = []
+    const hash = {
+        
+    }
+    for (let num of nums1) {
+        hash[num] = true;
+    }
+    for (let num of nums2) {
+        if (hash[num]) {
+            result.push(num);
+            hash[num] = false;
+        }
+    }
+    return result
+};
