@@ -1,0 +1,13 @@
+var findTilt = function(root) {
+    if (!root) return 0;
+    return tilt(root);
+    
+};
+
+const tilt = (node) => {
+    if (!node) return 0;
+    if(!node.left && !node.right) {
+        return node.val
+    }
+    return Math.abs(tilt(node.left) - tilt(node.right))
+}
